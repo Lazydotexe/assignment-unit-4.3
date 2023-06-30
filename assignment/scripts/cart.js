@@ -30,8 +30,18 @@ function listItems(arr) {
 
 //........................................................
 
+const maxItems = 5;
+
+function isFull(cart) {
+    if (cart >= maxItems) {
+        return true;
+    } else  {
+        return false;
+    }
+}
 
 
+console.log(isFull(1));
 
 
 
