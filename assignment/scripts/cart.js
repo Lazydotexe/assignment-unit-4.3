@@ -41,7 +41,13 @@ function isFull(cart) {
 }
 
 
-console.log(isFull(1));
+console.log(`The shopping cart is full with 1 item, ${isFull(1)}`);
+console.log(`The shopping cart is full with 5 items, ${isFull(5)}`);
+console.log(`The shopping cart is full with 6 items, ${isFull(6)}`);
+
+//.........................................................
+
+
 
 
 
