@@ -103,8 +103,7 @@ function removeItem(item) {// accepts and 'item'
 
 }
 removeItem('Donuts');
-removeItem('Bread');
-
+console.log(basket);
 
 
 
