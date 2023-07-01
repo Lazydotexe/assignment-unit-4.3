@@ -2,21 +2,47 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 let basket = [];
-
-function addItem(add) {
-    basket.push(add);
-    return true;
-
-}
-
-console.log('Adding Donuts ', addItem('Donuts'));
-console.log('Adding fruit ', addItem('fruit'));
-console.log('Adding veggies ', addItem('veggies'));
-console.log('My basket includes: ', basket);
+const maxItems = 5;
 
 
-//basket is including 'Kale' and 'Spinach' from the test.js file
+function addItem(item) {
+    if (isFull()) {
+      return false; // Basket is full, item cannot be added
+    } else {
+      basket.push(item);
+      return true; // Item added successfully
+    }
+  }
 
+
+addItem('Donuts');
+addItem('fruit');
+addItem('veggies');
+addItem('Kale');
+// console.log(`Basket is ${basket}`);
+// console.log('Adding apples (expect true)', addItem('apples'));
+// console.log(addItem("paper"))
+
+
+
+// ======= Why didnt the browser accept the code below  ========
+
+// function addItem(item, arr) { 
+//     arr.push(item);
+//     return true;
+
+// }
+// addItem('Donuts', basket);
+// //console.log('My basket includes: ', basket);
+// addItem('fruit', basket);
+// //console.log('My basket includes: ', basket);
+// addItem('veggies', basket);
+// // console.log('My basket includes: ', basket);
+// addItem('ham', basket);
+console.log(basket);
+
+
+//.......................................................................
 
 
 
@@ -27,40 +53,43 @@ function listItems(arr) {
     
 }
 
+listItems(basket);
 
-//........................................................
+//.......................................................................
 
-const maxItems = 5;
 
-function isFull(cart) {
-    if (cart >= maxItems) {
-        return true;
-    } else  {
-        return false;
-    }
+function empty(arr) {// accepts an array  as a perameter
+    arr.length = 0;// This line set the array to empty [] (This took me more time then i would like to admit.)
+    
 }
 
+//empty(basket);
+//console.log(basket);
 
-console.log(`The shopping cart is full with 1 item, ${isFull(1)}`);
-console.log(`The shopping cart is full with 5 items, ${isFull(5)}`);
-console.log(`The shopping cart is full with 6 items, ${isFull(6)}`);
+
+//................................................................
+
+function isFull() {
+    return basket.length >= maxItems;
+ } 
+
+//  console.log(isFull(basket));
+
+   // ** Why wont the browser accept this code ?!?!?!?
+
+/*function isFull(arr) {
+    return arr.length >= maxItems;
+   }  */
+
+   // console.log(isFull(basket));
+
 
 //.........................................................
 
 
+function removeItem(item) {
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
