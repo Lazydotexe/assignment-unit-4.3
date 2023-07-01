@@ -5,11 +5,18 @@ let basket = [];
 const maxItems = 5;
 
 
-function addItem(item) {
-    if (isFull()) {
-      return false; // Basket is full, item cannot be added
+// function addItem(item) {
+//     basket.push(item);
+//     return true;
+
+// }
+
+
+function addItem(item) { //accepts a 'item' as a perameter
+    if (isFull()) { //calls the isFull function and checks if true or false
+      return false; // if false it moves to the else if true it  returns false
     } else {
-      basket.push(item);
+      basket.push(item);//pushes an item to the basket array
       return true; // Item added successfully
     }
   }
@@ -17,7 +24,7 @@ function addItem(item) {
 
 addItem('Donuts');
 addItem('fruit');
-addItem('veggies');
+addItem('Spinach');
 addItem('Kale');
 // console.log(`Basket is ${basket}`);
 // console.log('Adding apples (expect true)', addItem('apples'));
@@ -46,9 +53,9 @@ console.log(basket);
 
 
 
-function listItems(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        console.log(arr[i]);
+function listItems(arr) { //accepts an array as a perameter
+    for (let i = 0; i < arr.length; i++) { //runs a loop while i is less then the length of the array and adds 1
+        console.log(arr[i]);//every time the loop runs it will log the index of i on a seperate line until the whole array was logged
     }
     
 }
@@ -69,8 +76,8 @@ function empty(arr) {// accepts an array  as a perameter
 
 //................................................................
 
-function isFull() {
-    return basket.length >= maxItems;
+function isFull() {//accepts an array as a perameter, in this case basket is forced in the code block
+    return basket.length >= maxItems; //returns a boolean true/false depending on the two variables inside
  } 
 
 //  console.log(isFull(basket));
@@ -87,9 +94,16 @@ function isFull() {
 //.........................................................
 
 
-function removeItem(item) {
+function removeItem(item) {// accepts and 'item' 
+    for (let i = 0; i <= basket.length; i++) { //runs a for loop and check i value against basket.length and while true add 1 to i
+      if (i == basket.indexOf(item)) {//for every loop the if will check if i equils basket.indexOf(item) and will loop until it does or it has check all basket.length
+        return basket.splice(i, 1);// if the if statments matches i to the indexOf it will then remove that item and return it
+      } 
+    } return null;//if it does not find the matching item from the indexOf it will return null
 
 }
+removeItem('Donuts');
+removeItem('Bread');
 
 
 
